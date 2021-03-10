@@ -1,9 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Header from "./header";
 import Footer from "./footer";
 import Note from "./note";
-import { noteCreator } from "./note";
 
 let notesArray = [
   { id: 1, title: "something", content: "hello world" },
@@ -13,7 +11,7 @@ function App() {
   return (
     <div>
       <Header />
-      {notesArray.map(noteCreator)}
+      {notesArray.map(Note)}
       <Footer />
     </div>
   );
