@@ -8,4 +8,8 @@ function Note(props) {
     </div>
   );
 }
+function noteCreator(note) {
+  return <Note key={note.key} title={note.title} content={note.content} />;
+}
 export default Note;
+export { noteCreator };

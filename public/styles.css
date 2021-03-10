@@ -39,8 +39,6 @@ footer p {
   box-shadow: 0 2px 5px #ccc;
   padding: 10px;
   width: 240px;
-  margin: 16px;
-  float: left;
 }
 .note h1 {
   font-size: 1.1em;
@@ -51,4 +49,9 @@ footer p {
   margin-bottom: 10px;
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+.notesContainer {
+  margin: 20px;
+  display: flex;
+  gap: 20px;
 }
