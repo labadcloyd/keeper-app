@@ -2,7 +2,6 @@ import React from "react";
 import Header from "./header";
 import Footer from "./footer";
 import Note from "./note";
-import { noteCreator } from "./note";
 
 let notesArray = [
   { key: 1, title: "something", content: "hello world" },
@@ -12,7 +11,7 @@ function App() {
   return (
     <div>
       <Header />
-      <div className="notesContainer">{notesArray.map(noteCreator)}</div>
+      <div className="notesContainer">{notesArray.map(Note)}</div>
 
       <Footer />
     </div>
