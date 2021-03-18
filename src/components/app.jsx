@@ -4,19 +4,39 @@ import Footer from "./footer";
 import Note from "./note";
 import CreateArea from "./createArea";
 
-let notesArray = [
-  { key: 1, title: "something", content: "hello world" },
-  { key: 2, title: "another thing", content: "hello another world" }
-];
 function App() {
-  let [notes, setNote] = useState([{}]);
+  const [notes, setNotes] = useState([]);
 
-  function addNote(event) {}
+  function addNote(newNote) {
+    setNotes((prevNotes) => {
+      return [...prevNotes, newNote];
+    });
+  }
+
+  function deleteNote(id) {
+    setNotes((prevNotes) => {
+      return prevNotes.filter((noteItem, index) => {
+        return index !== id;
+      });
+    });
+  }
   return (
     <div>
       <Header />
-      <CreateArea />
-      <div className="notesContainer">{notesArray.map(Note)}</div>
+      <CreateArea onAdd={addNote} />
+      <div className="notesContainer">
+        {notes.map((noteItem, index) => {
+          return (
+            <Note
+              key={index}
+              id={index}
+              title={noteItem.title}
+              content={noteItem.content}
+              onDelete={deleteNote}
+            />
+          );
+        })}
+      </div>
 
       <Footer />
     </div>
