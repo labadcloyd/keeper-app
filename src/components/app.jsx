@@ -14,8 +14,9 @@ function App() {
   }
 
   function deleteNote(id) {
+    console.log(id);
     setNotes((prevNotes) => {
-      return prevNotes.filter((noteItem, index) => {
+      return prevNotes.filter((singleNote, index) => {
         return index !== id;
       });
     });
