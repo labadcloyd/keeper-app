@@ -8,6 +8,7 @@ function App() {
   const [notes, setNotes] = useState([]);
 
   function addNote(newNote) {
+    console.log(newNote);
     setNotes((prevNotes) => {
       return [...prevNotes, newNote];
     });
